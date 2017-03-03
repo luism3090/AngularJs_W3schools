@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-class</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<!-- <script src="ng-class.js"></script> -->
+	<style>
+		.sky {
+		    color:white;
+		    background-color:lightblue;
+		    padding:20px;
+		    font-family:"Courier New";
+		}
+		.tomato {
+		    background-color:coral;
+		    padding:40px;
+		    font-family:Verdana;
+		}
+
+		.strike {
+    		text-decoration: line-through;
+		}
+		.bold {
+		    font-weight: bold;
+		}
+		.red {
+		    color: red;
+		}
+		.has-error {
+		    color: red;
+		    background-color: yellow;
+		}
+	</style>
+</head>
+<body ng-app="">
+	
+	<!-- La directiva ng-class une dinámicamente una o más clases CSS a un elemento HTML.
+
+	 El valor de la directiva ng-class puede ser una cadena, un objeto o una matriz.
+
+	  Si es una cadena, debe contener uno o más nombres de clase separados por el espacio. -->
+
+	<!--  Como objeto, debe contener pares clave-valor, donde la clave es el nombre de clase de la clase que desea agregar y el valor es un valor booleano. La clase sólo se agregará si el valor se establece en true. 
+	 
+	 Como una matriz, puede ser una combinación de ambos. Cada elemento de la matriz puede ser una cadena o un objeto, descrito anteriormente. -->
+
+	<div>Elija una clase</div>
+	<br>
+	<div>
+		<select ng-model="home">
+			<option value="sky">sky</option>
+			<option value="tomato">tomato</option>
+		</select>
+	</div>
+	<div ng-class="home">
+		<h1>Bienvenido a Casa!</h1>
+		<p>Me gusta eso!</p>
+	</div>
+
+
+<br><br>
+
+<p ng-class="{strike:deleted,bold:important,'has-error':error}" >
+	Aqui se mostrará el resultado de el estilo
+</p>
+<p>
+	<input type="checkbox" ng-model="deleted">
+	<label>borrar (aplicar "strike" clase)</label>
+</p>
+<p>
+	<input type="checkbox" ng-model="important">
+	<label>important (aplicar "bold" clase)</label>
+</p>
+<p>
+	<input type="checkbox" ng-model="error">
+	<label>error (aplicar "has-error" clase)</label>
+</p>
+
+
+<br><br>
+
+<p ng-class="style" >Usando una cadena de texto</p>
+<p >
+	<input type="text" ng-model="style" placeholder="Escribe bold strike o red">
+</p>
+
+
+</body>
+</html>

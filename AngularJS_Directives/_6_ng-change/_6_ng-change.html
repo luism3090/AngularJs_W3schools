@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-change</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="_6_ng-change.js"></script>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<label for="abc">Escribe algo en la caja de texto</label>
+	<input type="" id="abc" ng-change="cambio()" ng-model="value">
+	<div>El campo de texto ha cambiado {{count}} veces</div>
+</body>
+</html>

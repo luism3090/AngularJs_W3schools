@@ -1,0 +1,28 @@
+<!-- La ng-blur directiva indica AngularJS qué hacer cuando un elemento HTML pierde el foco.
+
+La ng-blur Directiva de AngularJS no anulará el evento onBlur original del elemento, tanto en la ng-blur expresión y el evento onBlur originales serán ejecutados. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-blur</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ejercicio1.js"></script>
+</head>
+<body ng-app="app">
+	
+	<div ng-controller="ctr1">
+
+		<input type="text" ng-blur="increment()"  >
+
+		<h2>{{count}}</h2>
+
+		<p>This example will increase the value of the variable "count" every time the input field loses focus.</p>
+
+	</div>
+	
+
+</body>
+</html>

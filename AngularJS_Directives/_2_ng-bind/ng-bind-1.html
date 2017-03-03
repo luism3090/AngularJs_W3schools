@@ -1,0 +1,23 @@
+<!-- La ng-bind directiva indica AngularJS para reemplazar el contenido de un elemento HTML con el valor de una variable, o expresión dada.
+
+Si el valor de la variable dada, o expresión, cambia, el contenido del elemento HTML especificado será cambiado también.
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-bind</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-bind-1.js"></script>
+</head>
+<body ng-app="app">
+	<div ng-controller="ctr1">
+	<p ng-bind="myText1">Texto que será remplazado</p>
+	<p ng-bind="myText2">Texto que será remplazado</p>
+	<p class="ng-bind:myText3">Texto que será remplazado</p>
+		
+	</div>
+</body>
+</html>

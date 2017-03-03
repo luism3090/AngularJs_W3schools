@@ -1,0 +1,19 @@
+<!-- La ng-bind-template directiva indica AngularJS para reemplazar el contenido de un elemento HTML con el valor de las expresiones dadas.
+
+Utilice la ng-bind-template directiva si se desea enlazar más de una expresión a su elemento HTML.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-bind-template</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ejercicio1.js"></script>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<div ng-bind-template="{{name1}} {{name2}}">
+		Hola mundo
+	</div>
+</body>
+</html>

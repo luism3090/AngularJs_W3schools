@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-checked</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="_7_ng-checked.js"></script>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<div>Mis carros:</div>
+	<div>
+		<div>
+			<input type="checkbox"  ng-click="marcar()"> Marcar todos
+		</div>
+		<div>
+			<input type="checkbox" ng-checked="marcado" >Volvo
+			<input type="checkbox" ng-checked="marcado">ford
+			<input type="checkbox" ng-checked="marcado">Mercedes
+		</div>
+	</div>
+	<br><br>
+	<div>
+	<div>Mis carros:</div>
+		<div>
+			<input type="checkbox"  ng-model="all"> Marcar todos
+		</div>
+		<div>
+			<input type="checkbox" ng-checked="all" >Volvo
+			<input type="checkbox" ng-checked="all">ford
+			<input type="checkbox" ng-checked="all">Mercedes
+		</div>
+	</div>
+	<div>
+		Da click en Marcar todos para marcar los 3 carros
+	</div>
+</body>
+</html>

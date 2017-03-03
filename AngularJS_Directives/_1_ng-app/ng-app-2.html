@@ -1,0 +1,20 @@
+<!-- La ng-app directiva indica AngularJS que este es el elemento raíz de la aplicación AngularJS.
+
+Todas las aplicaciones AngularJS deben tener un elemento raíz.
+
+Sólo puede tener una ng-app directiva en su documento HTML. Si hay más de uno ng-appaparece Directiva, se utilizará la primera aparición. -->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Ng-app</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="1_ng-app-2.js"></script>
+</head>
+<body ng-app="app">
+	<div  ng-controller="ctr1">
+    	{{ firstName + " " + lastName }}
+	</div>
+</body>
+</html>

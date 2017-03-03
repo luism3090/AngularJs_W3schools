@@ -1,0 +1,24 @@
+<!-- La ng-bind-html directiva es una manera segura de insertar contenido HTML a un elemento HTML.
+
+Cuando usted está dejando AngularJS escribir HTML en su aplicación, debe comprobar el código HTML que pudiera ser peligroso. 
+
+Al incluir el módulo "angulares-santize.js" en su aplicación, puede hacerlo ejecutando el código HTML a través de la función ngSanitize .
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-bind-html</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-bind-html.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
+</head>
+<body ng-app="app">
+	<div ng-controller="ctr1" ng-bind-html="html">
+		
+	</div>
+	<br><br><br>
+	<p>Nota: Este ejemplo incluye el "angular-sanitize.js", que tiene funciones para eliminar fichas potencialmente peligrosas del HTML.</p>
+</body>
+</html>
