@@ -1,0 +1,15 @@
+<!-- La ng-cloak directiva impide que el documento que muestra el código AngularJS sin terminar mientras AngularJS está siendo cargado.
+
+AngularJS aplicaciones pueden hacer que los documentos HTML parpadean cuando se carga la aplicación, que muestra el código de AngularJS por un segundo, antes de ejecutar todo el código. Utilice la ng-cloak directiva para evitar esto. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-cloak</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="">
+	<div ng-cloak >{{5+5}}</div>
+</body>
+</html>

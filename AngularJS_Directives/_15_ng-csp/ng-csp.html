@@ -1,0 +1,32 @@
+<!-- 
+La ng-csp directiva se utiliza para cambiar la política de seguridad de AngularJS.
+
+Con la Directiva ng-csp AngularJS no ejecutará ninguna función eval, y no inyectará ningun estilo en línea.
+
+Establecer el valor de la directiva ng-csp  a no-unsafe-eval, hará que AngularJS no ejecute ninguna función eval, pero permitirá la inyección de estilos en línea.
+
+Establecer el valor de la directiva ng-csp a no-inline-style, hará que AngularJS pueda inyectar cualquier estilo en línea, pero No permitirá que se ejecuten las funciones eval.
+
+El Uso de la directiva ng-csp es necesaria en el desarrollo de aplicaciones para extensiones de Google Chrome o Aplicaciones de Windows.
+
+Nota: La directiva ng-csp  no afecta a JavaScript, pero cambia la forma de trabajar de AngularJS , es decir: se pueden escribir funciones eval, y estas serán ejecutadas como se esperaba, pero AngularJS no correrá sus propias funciones eval. Se utiliza un modo de compatibilidad que puede ralentizar el tiempo de evaluación hasta el 30%. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-csp</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="" ng-csp>
+	<div>
+		Mi primera expresión: {{5+5}}
+	</div>
+	<div>
+		Al utilizar la directiva ng-csp, está cambiando la forma en que AngularJS ejecuta su propio código.
+	</div>
+	<div>
+		No podemos decir la diferencia, pero AngularJS se ve obligado a utilizar otra forma de evaluar las expresiones, lo que puede aumentar el tiempo de evaluación hasta el 30%.
+	</div>
+</body>
+</html>

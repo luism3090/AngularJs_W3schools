@@ -6,6 +6,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="ng-class-even.js"></script>
 </head>
+<style type="text/css">
+	.striped
+	{
+		color:white;
+		background-color: black;
+	}
+</style>
 <body ng-app="app">
 	
 <!-- La directiva ng-class-even une dinámicamente una o más clases CSS a un elemento HTML, pero sólo tendrá efecto en cada otra apariencia (uniforme) del elemento HTML.
@@ -16,10 +23,6 @@
  -->
 
 <div ng-controller="ctr1">
-{{objectPersona.nombre}}
-{{arrayPersona.nombre}}
-
-<br><br><br>
 
 	<table border="1">
 		<thead>
@@ -27,9 +30,9 @@
 			<th>Apellido</th>
 		</thead>
 		<tbody>
-			<tr ng-repeat="row in arrayPersona2">
-				<td>{{row}}</td>
-				<td>{{row}}</td>
+			<tr ng-repeat="x in arregloPersona" ng-class-even="'striped'">
+				<td>{{x.nombre}}</td>
+				<td>{{x.apellido}}</td>
 			</tr>
 		</tbody>
 	</table>

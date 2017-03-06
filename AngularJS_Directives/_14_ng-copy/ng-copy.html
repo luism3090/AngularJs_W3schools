@@ -1,0 +1,27 @@
+
+<!-- La ng-copy directiva indica AngularJS qué hacer cuando un elemento HTML está siendo copiado.
+
+La ng-copyDirectiva de AngularJS no anulará caso oncopy original del elemento, tanto en la ng-copy expresión y el evento oncopy originales serán ejecutados.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-copy</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-copy.js" ></script>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<div>
+		<input type="text" value="copia este texto" ng-copy="incrementar()" >
+	</div>
+	<p>
+		El texto ha sido copiado <strong>{{count}}</strong> veces.
+	</p>
+	<p>
+		Este ejemplo incrementara el valor de la variable "count" cada vez que tu copies el texto
+		que esta en el campo
+	</p>
+</body>
+</html>

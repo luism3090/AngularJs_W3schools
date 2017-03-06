@@ -1,0 +1,21 @@
+<!-- La ng-click directiva indica AngularJS qué hacer cuando se hace clic en un elemento HTML. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-click</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-click.js"></script>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<div>
+		click en el botón
+	</div>
+	<div>
+		<input type="button" value="Ok" ng-click="clickBoton()">
+	</div>
+	<div>El boton ha sido clickeado <strong>{{count}}</strong> veces.</div>
+	<div>Este ejemplo incrementa el valor de la variable count cada vez que se le da click al botón</div>
+</body>
+</html>

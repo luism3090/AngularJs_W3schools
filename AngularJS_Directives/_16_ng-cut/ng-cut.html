@@ -1,0 +1,28 @@
+<!-- La directiva ng-cut  indica a AngularJS lo que se puede hacer cuando se corta el texto de un elemento HTML.
+
+La Directiva ng-cut  de AngularJS no anulará el evento oncut original del elemento, tanto el evento de la directiva ng-cut y el evento oncut originales serán ejecutados. 
+
+soportado por <a>, <input>, <select>, <textarea>, y el objeto ventana.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-cut</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-cut.js" ></script>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<div>
+		<input type="text" value="corta este texto" ng-cut="incrementCount()">
+	</div>
+	<div >
+		El texto ha sido cortado <strong>{{count}}</strong> veces
+	</div>
+	<div>
+		Este ejemplo aumentará el valor de la variable "count" cada vez que corte el texto en el campo de entrada.
+	</div>
+</body>
+</html>

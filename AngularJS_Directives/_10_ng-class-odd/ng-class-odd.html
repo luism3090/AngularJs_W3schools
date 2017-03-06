@@ -1,0 +1,43 @@
+
+<!-- La ng-class-odd Directiva se une dinámicamente a una o más clases CSS a un elemento HTML, pero sólo tendrá efecto en cada otra aparición (impar) del elemento HTML.
+
+La ng-class-odd Directiva sólo funcionará si se utiliza junto con la ng-repeat Directiva.
+
+La ng-class-odd directiva es perfecto para los artículos de estilo en una lista o filas de una tabla, pero se puede utilizar en cualquier elemento HTML. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-class-odd</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-class-odd.js"></script>
+	<style type="text/css">
+		.black
+		{
+			background-color: black;
+			color:white;
+		}
+		.red
+		{
+			background-color: red;
+			color:white;
+		}
+	</style>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<table border="1">
+		<thead>
+			<th>Nombre</th>
+			<th>Apellido</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="row in arregloPersona" ng-class-odd="'black'" ng-class-even="'red'">
+				<td>{{row.nombre}}</td>
+				<td>{{row.apellido}}</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

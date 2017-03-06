@@ -1,0 +1,28 @@
+<!-- La ng-dblclick directiva indica AngularJS qué hacer cuando un elemento HTML se hace doble clic.
+
+La ng-dblclick Directiva de AngularJS no anulará el evento ondblclick original del elemento, ambos son ejecutados. -->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-dblclick</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-dblclick.js" ></script>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<div>Has doble clic en el encabezado</div>
+	<h1 ng-dblclick="incrementar()">Bienvenido</h1>
+	<div>
+		El encabezado ha sido doble vez clickeado 
+		<strong>
+			{{count}}
+		</strong> 
+		veces.
+	</div>
+	<div>
+		Este ejemplo aumenta el valor de la variable "count" cada vez que haga doble clic en el encabezado.
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+
+<!-- La ng-controllerDirectiva añade un controlador para su aplicación.
+
+En el controlador puede escribir código, y hacer que las funciones y variables, que serán partes de un objeto, esten disponibles en el interior del elemento HTML actual. En AngularJS a este objeto se llama un ámbito. -->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-controller</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-controller.js"></script>
+</head>
+<body ng-controller="ctr1">
+	<div>Mi nombre es: <strong>{{nombre}} {{apellido}}</strong></div>
+	<br><br><br>
+	<div>Este jemplo muestra como definir un controlador, y como usar variables provenientes del scope</div> 
+</body>
+</html>

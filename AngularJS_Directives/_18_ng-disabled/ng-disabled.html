@@ -1,0 +1,37 @@
+<!-- La ng-disabled directiva establece el atributo a disabled o enabled de un campo de formulario (de entrada, seleccionar, o área de texto).
+
+El campo de formulario se desactivará si la expresión dentro del ng-disabled atributo devuelve cierto.
+
+La Directiva ng-disabled nos permte cambiar el valor entre true y false. En HTML, no se puede establecer el disabled atributo a false (la presencia del atributo disabled hace que el elemento quede deshabilitado, independientemente de su valor). -->
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-disabled</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-disabled.js" ></script>
+</head>
+<body ng-app="app" ng-controller="ctr1" >
+	<div>
+		<label>
+			clickea aquí para desabilitar todos los campos de formulario:
+		</label>
+		<input type="checkbox" ng-model="all" >
+	</div>
+	<div>
+		<input type="text" ng-disabled="all" >
+		<input type="radio" ng-disabled="all">
+		<select ng-disabled="all">
+			<option>Femenino</option>
+			<option>Masculino</option>
+		</select>
+		<br><br>
+		<select ng-disabled="enabled">
+			<option>Femenino</option>
+			<option>Masculino</option>
+		</select>
+	</div>
+</body>
+</html>
