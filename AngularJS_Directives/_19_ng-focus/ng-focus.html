@@ -1,3 +1,8 @@
+
+<!-- La directiva ng-focus  indica a AngularJS qué hacer cuando un elemento HTML se pone el foco.
+
+La ng-focus Directiva de AngularJS no anulará el evento onfocus original del elemento, ambos serán ejecutados. -->
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -6,7 +11,15 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="ng-focus.js" ></script>
 </head>
-<body>
-	
+<body ng-app="app" ng-controller="ctr1">
+	<div>
+		<input type="text" ng-focus="incrementar()">
+	</div>
+	<h3>
+		{{count}}
+	</h3>
+	<div>
+		Este ejemplo aumentará el valor de la variable "count" cada vez que el campo de entrada obtenga el foco
+	</div>
 </body>
 </html>
