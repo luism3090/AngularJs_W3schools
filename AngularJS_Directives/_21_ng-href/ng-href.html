@@ -1,0 +1,30 @@
+
+<!-- La directiva ng-href  anula el atributo href original de un elemento <a>.
+
+La directiva ng-href  se debe utilizar en lugar de href si se tiene codigo AngularJS 
+dentro del valor href .
+
+La directiva ng-href se asegura de que el vínculo no se rompe incluso si el usuario hace clic en el enlace antes de AngularJS ha evaluado el código.
+ -->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-href.js" ></script>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<h1>
+		Tutoriales
+	</h1>
+	<div>
+		Ir a la pagina de <a href="{{valorHref}}">{{valorHref}}</a> para aprender	
+	</div>
+	<br><br>
+	<div>
+		Este ejemplo podría utilizar el atributo href original, pero en AngularJS, el atributo ng-href es más seguro.
+	</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+
+<!-- 
+
+La ng-hide directiva oculta el elemento HTML si la expresión se evalúa como verdadera.
+
+ng-hide es también una clase CSS predefinida en AngularJS, y fija del elemento display a none.
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-hide</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-hide.js" ></script>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<div>
+		Ocultar y mostrar el HTML
+		<input type="checkbox" ng-model="value">
+	</div>
+	<div ng-hide="value">
+		<h1>Bienvenido</h1>
+		<div>Bienvenido a mi casa</div>
+	</div>
+	<br><br><br>
+	<div>
+		Ocultar y mostrar el HTML
+		<input type="checkbox" ng-click="hideShow()">
+	</div>
+	<div ng-hide="ocultar">
+		<h1>Bienvenido</h1>
+		<div>Bienvenido a mi casa</div>
+	</div>
+</body>
+</html>
