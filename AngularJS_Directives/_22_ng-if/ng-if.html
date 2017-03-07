@@ -1,0 +1,42 @@
+<!-- La ng-if Directiva elimina el elemento HTML si la expresión se evalúa como falsa.
+
+Si la sentencia if se evalúa como verdadera, se añade una copia del elemento en el DOM.
+
+La ng-if directiva es diferente de la ng-hide, que oculta la visualización del elemento, donde el ng-if Directiva elimina por completo el elemento del DOM. -->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-if.js" ></script>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<div>
+		Mantener el HTML 
+		<input type="checkbox" ng-model="delCreate">
+	</div>
+	<div ng-if="delCreate">
+		<h1>
+			Bienvenido
+		</h1>
+		<div>
+			Bienvenido a mi casa
+		</div>
+	</div>
+
+
+<br><br>
+<p>
+	El elemento DIV se eliminará cuando la casilla de verificación no esté marcada.
+</p>	
+
+<p>
+	El elemento DIV volverá, si marca la casilla.
+</p>
+
+
+
+</body>
+</html>
