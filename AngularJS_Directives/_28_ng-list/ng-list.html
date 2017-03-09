@@ -1,0 +1,38 @@
+<!-- La ng-list directiva convierte una cadena en una matriz de cadenas, utilizando una coma como separador predeterminado.
+
+La ng-list Directiva también convierte a la inversa, si tiene una matriz de cadenas que desea mostrar en un campo de entrada como una cadena, a continuación, poner la ng-list directiva sobre el campo de entrada.
+
+El valor del ng-list atributo define el separador. -->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-list</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-list.js" ></script>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<h3>
+		Escribe algunas palabras en el campo de texto, y usa una coma para seperar cada palabra
+	</h3>
+	<div>
+		<input type="text" ng-model="lista" ng-list>
+	</div>
+	<h3>
+		Cuando la directiva es incluida, tu texto introducido en el campo es convertido en array
+		un dato por cada palabra.
+	</h3>
+	<h3>
+		{{lista}}
+	</h3>
+
+	<br><br><br><br><br>
+	<h3>
+		El campo que esta abajo traera información de una matriz desde el controlador.
+	</h3>
+	<div>
+		<input type="text" ng-model="lista2" ng-list="/" style="width:400px">
+	</div>
+</body>
+</html>

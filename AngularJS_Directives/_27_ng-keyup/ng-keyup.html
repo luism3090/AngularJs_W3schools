@@ -1,0 +1,25 @@
+<!-- La ng-keyup directiva indica AngularJS lo que se puede hacer cuando se utiliza el teclado en el elemento HTML específica.
+
+La ng-keyup Directiva de AngularJS no anulará caso onkeyup original del elemento, ambos serán ejecutados. -->
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-keyup</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-keyup.js" ></script>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<div>
+		<input type="text" ng-keyup="incrementar()">
+	</div>
+	<h2>
+		{{count}}
+	</h2>
+	<div>
+		Este ejemplo incrementa el valor de la variable count cada vez que una tecla es presionada dentro del campo de texto
+	</div>
+</body>
+</html>

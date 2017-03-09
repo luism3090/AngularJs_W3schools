@@ -1,0 +1,15 @@
+<!-- La directiva ng-init  evalúa la(s) expresióne(s) dada(s).
+
+La directiva ng-init  puede añadir un poco de lógica innecesaria en el ámbito de la aplicación, y se recomienda hacer tus evaluaciones en el controlador en vez de usar ng-init. -->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-init</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="" ng-init="saludo = 'Hola mundo! Angular JS'">
+	<div>{{saludo}}</div>
+</body>
+</html>

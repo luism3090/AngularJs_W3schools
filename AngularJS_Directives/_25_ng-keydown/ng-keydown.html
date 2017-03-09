@@ -1,0 +1,38 @@
+
+<!-- La ng-keydown directiva indica AngularJS lo que se puede hacer cuando se utiliza el teclado en un elemento HTML específico.
+
+La ng-keydown Directiva de AngularJS no anulará el evento onkeydown original del elemento, serán  ejecutados ambos.
+
+El orden de un golpe de tecla es:
+
+1. Keydown
+
+2. Keypress
+
+3. keyUp 
+
+
+Soportado por  <input>, <select>, <textarea> y otros elementos editables
+
+-->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-keydown</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-keydown.js" ></script>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<div>
+		<input type="text" ng-keydown="incrementar()">
+	</div>
+	<h2>
+		{{count}}
+	</h2>
+	<div>
+		Este ejemplo incrementa el valor de la variable count cada vez que una tecla es presionada dentro del campo de texto
+	</div>
+</body>
+</html>
