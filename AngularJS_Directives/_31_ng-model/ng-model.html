@@ -1,0 +1,29 @@
+<!-- La directiva ng-model vincula un elemento de formulario HTML a una variable en el ámbito 
+(scope) .
+
+ Si la variable no existe en el ámbito (scope), se creará. -->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-model</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-model.js" ></script>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<div>
+		<input type="text" ng-model="nombre">
+	</div>
+	<div>
+		El campo de texto esta ligado con el nombre de la variable
+	</div>
+	<div>
+		{{nombre}}
+	</div>
+	<div>
+		Este ejemplo muetra como la directiva ng-model liga el valores de un campo de texto a una
+		variable en el scope
+	</div>
+</body>
+</html>

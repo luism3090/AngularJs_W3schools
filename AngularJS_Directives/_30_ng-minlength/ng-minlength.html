@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-minlength</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="" >
+<form name="myForm">
+	<div>
+		un error será mostrado cuando se escriba menos de 5 caracteres en el campo:
+	</div>
+	<div>
+		<input type="text" name="myInput" ng-model="myInput" ng-minlength="5">	
+		<h2 ng-if="!myForm.myInput.$valid">
+			El valor es muy corto
+		</h2>
+	</div>
+	<div>
+		En este ejemplo, se mostrará un error si el campo contiene menos de 5 caracteres. 
+	</div>
+	<div>
+		Nota : Si el campo esta vacio, será considerado valido
+	</div>
+</form>
+	
+</body>
+</html>

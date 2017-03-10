@@ -1,0 +1,22 @@
+
+<!-- La ng-maxlength Directiva añade una restricción a un campo de entrada, y al validador de la forma.
+
+El ng-maxlength no es el mismo que el maxlength atributo en HTML, lo que evitará que los usuarios escriban más que el número restringido de caracteres.
+
+La directiva ng-maxlength no impedirá que los usuarios escriban más caracteres que el número restringido de caracteres en la directiva ng-maxlength , Pero el formulario será inválido si lo hacen -->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-maxlength</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-maxlength.js" ></script>
+</head>
+<body ng-app="">
+	<form name="myForm">
+		<input type="text" name="myInput" ng-model="myInput" ng-maxlength="5" >
+		<h1 ng-if="!myForm.myInput.$valid" >El valor ingresado es muy largo</h1>
+	</form>
+</body>
+</html>
