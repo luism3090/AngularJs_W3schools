@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-model_Directive</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-model_Directive.js" ></script>
+</head>
+<body ng-app="app">
+	
+
+
+<!-- La directiva ng-model vincula el valor de los controles HTML (input, select, textarea) a los datos de la aplicación. -->
+
+
+<!-- Con la directiva ng-model puede vincular el valor de un campo de entrada a una variable 
+creada en AngularJS.   EJEMPLO -->
+
+
+<div ng-controller="ctr1">
+	<div>
+		<input type="text" ng-model="nombre">
+	</div>
+	<br>
+	<div>
+		Usa la directiva ng-model para enlazar un valor de un campo de texto a una propiedad de un 
+		controlador
+	</div>
+</div>
+
+<br><br><br><br><br><br>
+
+
+<!--  HACER EL ENLAZAMIENTO --> 
+
+<!-- 
+
+El enlazamiento se lleva de 2 formas. 
+
+Si el usuario cambia el valor dentro del campo de entrada,
+La Propiedad angular Js pueden tambien cambiar ese valor.  EJEMPLO:  -->
+
+
+<div ng-controller="ctr2">
+	<div>
+		<label for="nombre">Nombre:</label>
+		<input type="text" id="nombre" ng-model="nombre">
+	</div>
+	<h2>
+		{{nombre}}
+	</h2>
+	<div>
+		Cambia el nombre dentro del campo de texto, y veras que el nombre dentro del encabezado cambia también
+	</div>
+</div>
+
+<br><br><br><br><br><br>
+
+
+<!-- VALIDANDO FORMULARIOS  -->
+
+
+<!-- La directiva ng-model puede proporcionar validación de tipo para los datos de la aplicación (número, correo electrónico, requerido):  EJEMPLO -->
+
+
+<form name="myForm">
+	<div>
+		<label for="email"  >Email:</label>
+		<input type="email" id="email" name="MyAddress"  ng-model="email">
+		<br>
+		<span ng-show="myForm.MyAddress.$error.email" >El email escrito es un email Inválido</span>
+	</div>
+	<br>
+	<div>
+		Escribe tu dirección de mail en la caja de entrada de texto. AngularJs mostrará un mensaje de error
+		si la dirección no es un email
+	</div>
+</form>
+
+<!-- En el ejemplo anterior, el span sólo se mostrará si la expresión en el atributo ng-show devuelve true.
+
+Si la propiedad del atributo ng-model no existe, AngularJS creará uno para usted. -->
+
+<br><br><br><br><br>
+
+
+<!-- STATUS O ESTADO DE LA APLICACIÓN  -->
+
+<!-- La directiva ng-model puede proveer un status para los dtos de la aplicación (invalido,sucio,tocado,error)
+EJEMPLO -->
+
+<form name="myForm" ng-controller="ctr3">
+	
+	<p>
+		<label for="email">Email:</label>
+		<input type="email" name="myEmail" id="email" ng-model="email">
+	</p>
+	<p>
+		Edita la dirección de email, y trata de cambiar el estado
+	</p>
+	<p>
+		<h2>Estado</h2>
+		<div>
+			Valid: {{myForm.myEmail.$valid}} (Si es true, el valor cumple todos los criterios).
+		</div>
+		<div>
+			Dirty: {{myForm.myEmail.$dirty}} (Si es true, el valor ha sido cambiado).
+		</div>
+		<div>
+			Touched: {{myForm.myEmail.$touched}} (Si es true, en el campo han colocado el foco).
+		</div>
+	</p>
+
+
+</form>
+
+<br><br><br><br><br>
+
+
+<!-- CLASES DE CSS  -->
+
+<!-- La directiva ng-model proporciona clases css para los elementos html, dependiendo de su estado 
+			EJEMPLO:
+-->
+
+
+<style>
+	input.ng-invalid
+	{
+		background-color: orange;
+	}
+</style>
+
+
+
+<form name="myForm">
+	<label for="nombre"> Escribe tu nombre:</label>
+	<input type="text" name="nombre" required ng-model="nombre">
+</form>
+
+<p>
+	Edita el campo de texto y verifica como se obtendrá o perderá la clases según el estado de la aplicación.
+</p>
+
+<p>
+	Nota: Un campo de texto con el atributo "required" no es válido cuando está vacío
+</p>
+
+
+<!-- La directiva ng-model agrega / elimina las siguientes clases, según el estado del campo de formulario:
+
+ng-empty
+ng-not-empty
+ng-touched
+ng-untouched
+ng-valid
+ng-invalid
+ng-dirty
+ng-pending
+ng-pristine -->
+
+<br><br><br><br><br>
+
+
+<!-- ENLAZANDO DATOS DE ANGULARJS -->
+
+
+<!-- La vinculación de datos en AngularJS es la sincronización entre el modelo y la vista.  -->
+
+
+<!-- Modelo de datos 
+
+
+Las aplicaciones de AngularJS suelen tener un modelo de datos. El modelo de datos es una colección de datos disponibles para la aplicación.    -->
+
+<!-- Ejemplo
+
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.firstname = "John";
+    $scope.lastname = "Doe";
+}); -->
+
+
+
+<!-- Vista HTML -->
+
+<!-- El contenedor HTML en el que se muestra la aplicación AngularJS se denomina vista.  -->
+
+
+<!-- La vista tiene acceso al modelo, y hay varias maneras de mostrar los datos del modelo en la vista. -->
+
+
+<!-- Puede utilizar la directiva ng-bind, que enlazará el innerHTML del elemento con la propiedad del modelo especificado:   
+
+También puede usar las llaves dobles {{}} para mostrar el contenido del modelo
+
+Ejemplos : -->
+
+
+<div ng-controller="ctr4">
+
+	<p ng-bind="nombre"></p>
+	<p>{{nombre}}</p>
+</div>
+
+<br><br><br><br><br>
+
+<!-- O puede utilizar la directiva ng-model en los controles HTML para vincular el modelo a la vista. -->
+
+
+<!-- La Directiva ng-model -->
+
+<!-- Utilice la directiva ng-model para vincular datos del modelo a la vista en controles HTML (input, select, textarea)  EJEMPLO -->
+
+
+<div ng-controller="ctr5">
+	<input type="text" name="name" ng-model="nombre" >
+</div>
+
+<br><br><br><br><br>
+
+<!-- La directiva ng-model proporciona una unión bidireccional entre el modelo y la vista. -->
+
+<!-- Unión de dos vías 
+
+La vinculación de datos en AngularJS es la sincronización entre el modelo y la vista. -->
+
+
+<!-- Cuando los datos del modelo cambian, la vista refleja el cambio y, cuando los datos de la vista cambian, el modelo también se actualiza. Esto ocurre de forma inmediata y automática, lo que garantiza que el modelo y la vista se actualizan en todo momento.   EJEMPLO: -->
+
+
+<div ng-controller="ctr6">
+    Nombre: <input ng-model="nombre">
+    <h1>{{nombre}}</h1>
+</div>
+
+
+<br><br><br><br><br>
+
+</body>
+</html>
