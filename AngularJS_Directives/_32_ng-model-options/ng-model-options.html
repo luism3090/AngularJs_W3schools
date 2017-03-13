@@ -1,0 +1,71 @@
+<!-- La directiva ng-model-options se utiliza para controlar el enlace de un elemento de formulario HTML y una variable en el ámbito.
+
+Puede especificar que el enlazamiento debe esperar a que se produzca un suceso específico, o esperar un número específico de milisegundos y más, consulte los valores legales enumerados en los valores de los parámetros siguientes. -->
+
+<!-- Valores de Parámetro  -->
+
+<!-- 
+Un Objeto que especifica qué opciones debe seguir la vinculación de datos. Los objetos legales son:
+
+
+
+{updateOn: 'event'} Especifica que la vinculación debe ocurrir cuando se produce el evento específico.
+
+{debounce : 1000} Especifica cuántos milisegundos esperará para hacer la vinculación.
+
+{allowInvalid : true|false}  Especifique si la vinculación puede ocurrir si el valor no se valida.
+
+{getterSetter : true|false} Especifica si las funciones vinculadas al modelo deben tratarse como getters / setters
+
+{timezone : '0100'}  Especifica qué zona horaria debe utilizarse al trabajar con el objeto Date. -->
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-model-options</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-model-options.js" ></script>
+</head>
+<body ng-app="app" >
+	<div ng-controller="ctr1">
+		<div>
+			Actualiza el valor del campo:
+		</div>
+		<div>
+			<input type="text" ng-model="nombre" ng-model-options="{updateOn:'blur'}">
+		</div>
+		<div>
+			El valor esperará con la vinculación hasta que el campo pierda el foco
+		</div>
+		<div>
+			{{nombre}}
+		</div>
+		<div>
+			Este ejemplo muestra como la directiva ng-model-options puede ser usada Para mantener la vinculación de datos del valor de un campo de entrada hasta que el campo pierda el foco.
+		</div>
+	</div>
+	
+	<br><br><br><br><br> 
+	
+	<div>
+		<div>
+			Actualiza el valor del campo:
+		</div>
+		<div>
+			<input type="text" ng-model-options="{debounce:5000}" ng-model="nombre">
+		</div>
+		<div>
+			El valor se esperará a que transcurran unos segundo para que se vinculen los datos 
+		</div>
+		<div>
+			{{nombre}}
+		</div>
+	</div>
+	
+	
+
+</body>
+</html>
