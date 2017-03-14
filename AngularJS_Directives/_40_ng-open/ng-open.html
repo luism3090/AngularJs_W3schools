@@ -1,0 +1,30 @@
+<!--  La directiva ng-open establece el atributo abierto de una lista de detalles. 
+
+La lista de detalles estará visible si la expresión dentro del atributo ng-open devuelve true. 
+
+soportado solo por el elemento <details>.
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-open</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	
+</head>
+<body ng-app="">
+	<div>
+		click aquí para mostrar el contenido de la lista 
+		<input type="checkbox" ng-model="mostrarDetalles">
+	</div>
+	<details ng-open="mostrarDetalles">
+		<summary>Copyright 1999-2017</summary>
+		<p>by Refsnes Data. Todos los derechos reservados</p>
+	</details>
+
+	<p>Nota: Actualmente, la etiqueta de detalles sólo es soportada en Opera, Chrome y Safari.</p>
+</body>
+</html>

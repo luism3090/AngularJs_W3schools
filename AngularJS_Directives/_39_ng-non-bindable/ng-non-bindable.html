@@ -1,0 +1,23 @@
+<!-- La directiva ng-non-bindable especifica que el contenido de tal elemento HTML y sus nodos secundarios no deben ser compilados por AngularJS. 
+
+La directiva ng-non-bindable no tiene parámetros.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-non-bindable</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-non-bindable.js" ></script>
+</head>
+<body ng-app="">
+	<div ng-non-bindable>
+		Este código no será compilado por AngularJS: {{5 + 5}}
+	</div>
+	<div>
+		Este código no será compilado por AngularJS: {{5 + 5}}
+	</div>
+</body>
+</html>

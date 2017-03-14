@@ -1,0 +1,25 @@
+<!-- La directiva ng-mouseenter le dice a AngularJS qué hacer cuando un cursor del ratón entra en el elemento HTML específico. 
+
+La directiva ng-mouseenter de AngularJS no invalidará el evento onmouseenter original del elemento, ambos serán ejecutados.
+
+ -->
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-mouseenter.js" ></script>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<h3 ng-mouseenter="incrementar()">
+		pon el mouse sobre mí
+	</h3>
+	<h2>
+		{{contador}}
+	</h2>
+	<div>
+		Este ejemplo aumentará el valor de la variable "contador" cada vez que el cursor del ratón entre en el elemento DIV
+	</div>
+</body>
+</html>

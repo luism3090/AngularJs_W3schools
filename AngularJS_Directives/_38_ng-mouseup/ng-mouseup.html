@@ -1,0 +1,25 @@
+<!-- La directiva ng-mouseup le dice a AngularJS qué hacer cuando se termina el clic del ratón.
+
+La directiva ng-mouseup de AngularJS no invalidará el evento onmouseup original del elemento, ambos se ejecutarán.
+ -->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-mouseover </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-mouseup.js" ></script>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<h3 ng-mouseup="incrementar()">
+		¡Pon el ratón sobre mí! 
+	</h3>
+	<h2>
+		{{contador}}
+	</h2>
+	<div>
+		Este ejemplo aumentará el valor de la variable "contador" cada vez que el cursor del ratón se mueva sobre el elemento DIV
+	</div>
+</body>
+</html>

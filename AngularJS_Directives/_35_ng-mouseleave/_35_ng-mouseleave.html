@@ -1,0 +1,24 @@
+<!-- La directiva ng-mouseleave indica a AngularJS qué hacer cuando un cursor del ratón abandona el elemento HTML específico. 
+
+La directiva ng-mouseleave de AngularJS no anulará el evento onmouseleave original del elemento, ambos se ejecutarán. -->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-mouseleave</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-mouseleave.js" ></script>
+</head>
+<body ng-app="app" ng-controller="ctr1">
+	<h3 ng-mouseleave="incrementar()">
+		¡Pon El ratón sobre mí! (Y el ratón lejos de mí ...)
+	</h3>
+	<h2>
+		{{contador}}
+	</h2>
+	<div>
+		Este ejemplo aumentará el valor de la variable "contador" cada vez que el cursor del ratón abandone el elemento DIV
+	</div>
+</body>
+</html>
