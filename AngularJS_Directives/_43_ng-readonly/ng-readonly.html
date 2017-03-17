@@ -1,0 +1,28 @@
+<!-- La directiva ng-readonly establece el atributo readonly de un campo de formulario (input o textarea).
+
+El campo de formulario será readonly si la expresión dentro del atributo ng-readonly devuelve true.
+	
+La directiva ng-readonly es necesaria para poder cambiar el valor entre verdadero y falso. 
+
+En HTML, no puede establecer el atributo readonly como false (la presencia del atributo readonly hace que el elemento sea readonly, independientemente de su valor).
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-readonly</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-readonly.js" ></script>
+</head>
+<body ng-app="" >
+	<div>
+		Click aquí para hacer que el campo sea readonly:
+		<input type="checkbox" ng-model="all">
+	</div>
+	<div>
+		<input type="text" ng-readonly="all">
+	</div>
+</body>
+</html>

@@ -6,6 +6,22 @@ La directiva ng-options llena un elemento <select> con <options>.
 La directiva ng-options utiliza una matriz para llenar la lista desplegable. En muchos casos sería más fácil utilizar la directiva ng-repeat, pero tendrá más flexibilidad al utilizar la directiva ng-options.
 
 
+Expresiones legales :
+
+label for value in array
+
+select as label for value in array
+
+label group by group for value in array
+
+label disabled when disable for value in array
+
+label group by group for value in array track by expression
+
+label disabled when disable for value in array track by expression
+
+label for value in array | orderBy expression track by expression
+
  -->
 
 <!DOCTYPE html>
@@ -16,7 +32,16 @@ La directiva ng-options utiliza una matriz para llenar la lista desplegable. En 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="ng-options.js" ></script>
 </head>
-<body>
-	
+<body ng-app="app" ng-controller="ctr1">
+	<div>
+						   <!-- ng-options="item.pais for item in paises" -->
+		<select ng-model="algo" ng-options="item.pais group by item.continente for item in paises">
+			<option value="">Elija una opción</option>
+		</select>
+	</div>
+	<br>
+	<div>
+		Este ejemplo muestra como llenar un select usando la directiva ng-options 
+	</div>
 </body>
 </html>

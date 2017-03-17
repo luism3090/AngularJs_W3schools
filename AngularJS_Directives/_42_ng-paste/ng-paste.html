@@ -1,0 +1,34 @@
+<!-- 
+
+La directiva ng-paste le dice a AngularJS qué hacer cuando el texto se pega en un elemento HTML.
+
+La directiva ng-paste de AngularJS no invalidará el evento de onpaste original del elemento, ambos se ejecutarán.
+
+
+Soportado por <input>, <select>, <textarea> y otros inputs
+
+
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-paste</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-paste.js" ></script>
+</head>
+<body ng-app="app" ng-controller="ctr1" >
+	<div>
+		<input type="text" value="pega texto aquí" ng-paste="increment()">
+	</div>
+	<div>
+		El texto ha sido pegado {{contador}} veces
+	</div>
+	<div>
+		Este ejemplo incrementará el valor de la variable "contador" cada vez que tu pegues texto
+		en el campo
+	</div>
+</body>
+</html>
