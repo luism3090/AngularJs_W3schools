@@ -1,0 +1,23 @@
+<!-- La directiva ng-src reemplaza el atributo src original de un element <img> .
+
+La directiva ng-src debe utilizarse en lugar de src si tiene el código AngularJS dentro del valor src.
+
+La directiva ng-src asegura que la imagen no se muestre mal antes de que AngularJS haya evaluado el código.
+ -->
+
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>ng-src</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="ng-src.js" ></script>
+	</head>
+	<body ng-app="app" ng-controller="ctr1">
+		<h1>Angular</h1>
+		<div>
+			<img src="{{urlImagen}}">
+		</div>
+		<div>Este ejemplo podría usar el atributo src original, pero con el código AngularJS dentro del valor, es mejor usar el atributo ng-src</div>
+	</body>
+</html>

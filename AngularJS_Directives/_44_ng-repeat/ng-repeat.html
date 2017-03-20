@@ -1,0 +1,87 @@
+<!-- 
+
+La directiva ng-repeat repite un conjunto de elementos HTML, un número dado de veces.
+
+ El conjunto de HTML se repetirá una vez por elemento en una colección. 
+
+ La colección debe ser una matriz o un objeto.
+
+ Nota: 
+
+ Cada instancia de la repetición tiene su propio ámbito, que consiste en el elemento actual.
+ Si tiene una colección de objetos, la directiva ng-repeat es perfecta para crear una tabla HTML, mostrando una fila de tabla para cada objeto y una tabla de datos para cada propiedad de objeto. 
+
+
+<elemento ng-repeat="expresion"></elemento>
+
+Una expresión que especifica cómo enlazar la colección
+
+Ejemplos de expresiones Legales :
+
+x in records
+
+(key, value) in myObj
+
+x in records track by $id(x)
+
+
+
+  -->
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>ng-repeat</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="ng-repeat.js" ></script>
+</head>
+<body ng-app="app" >
+
+	<div ng-controller="ctr1">
+		<div>Obtener datos de un arreglo </div>
+		<table border="1">
+			<thead>
+				<th>Nombre</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="dato in nombres">
+					<td>{{dato}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<br><br>
+	<div ng-controller="ctr2">
+		<div>Obtener datos de un arreglo de objetos </div>
+		<table border="1">
+			<thead>
+				<th>Nombre</th>
+				<th>Edad</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="algo in personas">
+					<td>{{algo.nombre}}</td>
+					<td>{{algo.edad}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<br><br>
+	<div ng-controller="ctr3">
+		<div>Obtener datos de un OBJETO y ademas el nombre de la propiedad de objeto</div>
+		<table border="1">
+			<tbody>
+				<tr ng-repeat="(x, y) in gente">
+					<td>{{x}}</td>
+					<td>{{y}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+<!-- 
+
+La directiva ng-show muestra el elemento HTML especificado si la expresión se evalúa como true, de lo contrario el elemento HTML se oculta.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>ng-show</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="ng-show.js" ></script>
+	</head>
+	<body ng-app="app">
+		<div>
+			Mostrar HTML: 
+			<input type="checkbox" ng-model="miVar">
+		</div>
+		<div ng-show="miVar">
+			<h1>Bienvenido</h1>
+			<p>Bienvenido a mi hogar</p>
+		</div>
+
+		<br><br><br><br><br><br>
+
+
+		<div ng-controller="ctr1">
+			<div>
+				Mostrar HTML: 
+				<input type="checkbox" ng-click="mostrarOcultar()">
+			</div>
+			<div ng-show="show">
+				<h1>Bienvenido</h1>
+				<p>Bienvenido a mi hogar</p>
+			</div>
+		</div>
+		
+
+	</body>
+</html>

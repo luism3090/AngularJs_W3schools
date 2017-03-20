@@ -1,0 +1,36 @@
+<!-- La directiva ng-required establece el atributo requerido de un campo de formulario (input o textarea).
+
+El campo de formulario será necesario si la expresión dentro del atributo ng-required devuelve true.
+
+La directiva ng-required es necesaria para poder cambiar el valor entre true y false.
+
+ En HTML, no puede establecer el atributo requerido como false (la presencia del atributo requerido hace que el elemento sea necesario, independientemente de su valor). 
+
+soportado por <input>, <select>, y <textarea> y otros elementos de formulario
+
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="ng-required.js" ></script>
+	</head>
+	<body ng-app="app">
+		<form name="myForm" ng-controller="ctr1">
+			<div>
+				click aqui para hacer que el campo de abajo sea requerido
+				<input type="button"  ng-click="validar()" value="Validar">
+			</div>
+			<div>
+				<input type="text" name="miInput" ng-model="datos" ng-required="miInput">
+			</div>
+			<h1 ng-if="miInput">El campo no puede estar vacio</h1>
+		</form>
+		<br><br><br>
+		<div>En este ejemplo, mostraremos un error si el campo está vacío al pulsar el boton de validar </div>
+	</body>
+</html>

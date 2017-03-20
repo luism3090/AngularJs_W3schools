@@ -1,0 +1,22 @@
+<!-- La directiva ng-srcset reemplaza el atributo srcset original de un elemento.
+
+La directiva ng-srcset debe usarse en lugar de srcset si tiene el código AngularJS dentro del valor srcset.
+
+La directiva ng-srcset asegura que la imagen no se muestre mal antes de que AngularJS haya evaluado el código. -->
+
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>ng-srcset</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="ng-srcset.js" ></script>
+	</head>
+	<body ng-app="app">
+		<div ng-controller="ctr1">
+			<h1>Angular</h1>
+			<img src="{{imgSrc}}">
+			<div>Este ejemplo podría utilizar el atributo srcset original, pero con el código AngularJS dentro del valor, es mejor usar el atributo ng-srcset</div>
+		</div>
+	</body>
+</html>

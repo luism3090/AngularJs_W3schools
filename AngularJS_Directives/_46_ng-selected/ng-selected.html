@@ -1,0 +1,38 @@
+
+<!-- 
+
+La directiva ng-selected establece el atributo seleccionado de un element <option> en un <select> .
+
+La opción se seleccionará si la expresión dentro del atributo ng-selected devuelve true.
+
+La directiva ng-selected es necesaria para poder cambiar el valor entre true y false. 
+
+En HTML, no puede establecer el atributo seleccionado como false (la presencia del atributo seleccionado hace que el elemento sea seleccionado, independientemente de su valor).
+
+soportado por el elemento <option>.
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>ng-selected</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="ng-selected.js" ></script>
+	</head>
+	<body ng-app="">
+		<div>
+			click aquí para seleccionar BMW como tu carro favorito:
+			<input type="checkbox" ng-model="fav">
+			<p>	Mi carro favorito:</p>
+			<div>
+			<select>
+				<option>Volvo</option>
+				<option ng-selected="fav">BMW</option>
+				<option >Ford</option>
+			</select>	
+			</div>
+		</div>
+	</body>
+</html>
