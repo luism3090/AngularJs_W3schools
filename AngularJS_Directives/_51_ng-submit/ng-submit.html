@@ -1,0 +1,34 @@
+<!-- La directiva ng-submit especifica una función a ejecutar cuando se envía el formulario.
+
+Si el formulario no tiene una acción, ng-submit evitará que se envíe el formulario.
+
+Soportada por el elemento <form>
+ -->
+
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>ng-submit</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="ng-submit.js" ></script>
+	</head>
+	<body ng-app="app" ng-controller="ctr1">
+
+		<form ng-submit="mensaje()">
+			<div>
+				<input type="text" name="text" >
+				<input type="submit" name="button" value="Enviar">
+			</div>
+			<br>
+			<div ng-bind="msj">
+				
+			</div>
+			<br>
+			<div>
+				Este ejemplo muestra cómo ejecutar una función AngularJS cuando se envía un formulario.
+			</div>
+		</form>
+		
+	</body>
+</html>

@@ -1,0 +1,32 @@
+
+<!-- AngularJS modifica el comportamiento predeterminado del elememto <a>
+
+AngularJS evita que la página se recargue cuando un usuario hace clic en un elemento
+con un atributo href vacío. -->
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>a</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	</head>
+	<body>
+		<div>
+			Haz click en los 2 enlaces de abajo:
+		</div>
+		<br><br>		
+		<div>
+			<a href="">Click aquí</a>
+			<div ng-app="">
+				<a href="">Click aquí también</a>
+			</div>
+		</div>
+		<br><br>	
+		<div>
+				El segundo enlace está dentro de una aplicación AngularJS y por lo tanto no volverá a cargar la página.
+		</div>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!-- 
+
+La directiva ng-switch le permite ocultar / mostrar elementos HTML dependiendo de una expresión.
+
+Los elementos secundarios con la directiva ng-switch-when se mostrarán si obtiene una coincidencia, de lo contrario el elemento y sus hijos serán eliminados.
+
+También puede definir una sección predeterminada, mediante la directiva ng-switch-default, para mostrar una sección si no de las otras secciones obtiene una coincidencia.
+
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>ng-switch</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="ng-switch.js" ></script>
+	</head>
+	<body ng-app="">
+		<div>
+			<div>
+				Mi tema favorito es :
+				<select ng-model="myVar">
+					<option value="futbol">Fútbol</option>
+					<option value="politica">Política</option>
+					<option value="tecnologia">Tecnología</option>
+				</select>
+			</div>
+			<hr>
+			<div ng-switch="myVar">
+				<div ng-switch-when="futbol">
+					<h1>Fútbol</h1>
+					<p>Bienvenido al mundo del futbol</p>
+				</div>
+				<div ng-switch-when="politica">
+					<h1>Política</h1>
+					<p>Bienvenido al mundo del política</p>
+				</div>
+				<div ng-switch-when="tecnologia">
+					<h1>Tecnología</h1>
+					<p>Bienvenido al mundo del tecnología</p>
+				</div>
+				<div ng-switch-default>
+					<h1>Switch</h1>
+					<p>Seleccione el tema de la lista desplegable, para cambiar el contenido de este DIV</p>
+				</div>
+			</div>
+			<hr>
+			<div>La directiva ng-switch oculta y muestra secciones HTML dependiendo de un cierto valor</div>
+		</div>
+	</body>
+</html>

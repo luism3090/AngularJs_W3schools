@@ -1,0 +1,77 @@
+<!-- 
+
+AngularJS modifica el comportamiento predeterminado de la etiqueta form 
+
+Los formularios dentro de una aplicación AngularJS reciben determinadas propiedades. Estas propiedades describen el estado actual del formulario.
+
+Los formularios tienen los siguientes estados:
+
+$pristine : campos que no se han modificado todavía
+$dirty : Uno o más se han modificado
+$invalid : El contenido del formulario NO es válido
+$valid The : El contenido del formulario SI o es válido
+$submitted : El formulario fue enviado 
+
+El valor de cada estado representa un valor booleano, Y es verdadero o falso.
+
+Formularios en AngularJS previenen la acción predeterminada, que es enviar el formulario al servidor, si no se especifica el atributo de acción.
+
+
+
+Se hace referencia a los formularios utilizando el valor del atributo de nombre.
+
+<form name="formname"></form>
+
+
+Clases CSS 
+
+Los formularios dentro de una aplicación AngularJS reciben determinadas clases. Estas clases se pueden utilizar para formas de estilo de acuerdo a su estado.
+
+Se agregan las clases siguientes:
+
+ng-pristine : No hay campos que se hayan modificado todavía
+ng-dirty : Uno o más campos han sido modificados
+ng-valid : El contenido del formulario SI es valido
+ng-invalid : El contenido del formulario NO es valido
+ng-valid-key : Una clave para cada validación. Ejemplo: ng-valid-required, útil cuando hay más de una cosa que debe ser validada
+ng-invalid-key Ejemplo: ng-invalid-required
+
+Las clases son removidas si el valor de ellos representa falso
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>form</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="" ></script>
+	</head>
+	<body>
+	<div ng-app="">
+
+		<form name="miForm">	
+			<p>
+				Intenta escribir en el campo de texto:
+			</p>
+			<p>
+				<input type="text" name="miInput" ng-model="miInput" required>
+			</p>
+			<p>
+				El estado del formulario es valido :
+			</p>
+			<h1>
+				{{miForm.miInput.$valid}}
+			</h1>
+			<p>
+				El campo de entrada es obligatorio, por lo que el estado válido del formulario no se convertirá en true siempre y cuando el valor esté vacío
+			</p>
+		</form>
+		
+	</div>
+		
+
+	</body>
+</html>

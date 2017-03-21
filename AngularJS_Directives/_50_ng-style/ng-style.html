@@ -1,0 +1,25 @@
+
+<!-- 
+
+La directiva ng-style especifica el atributo de estilo para el elemento HTML.
+
+El valor del atributo ng-style debe ser un objeto o una expresión que devuelva un objeto.
+
+El objeto consiste en propiedades y valores CSS, en pares de valores clave.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>ng-style</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="ng-style.js" ></script>
+	</head>
+	<body>
+		<div ng-app="app" ng-controller="ctr1">
+			<h1 ng-style="miStilo">Bienvenido</h1>
+		</div>
+	</body>
+</html>
