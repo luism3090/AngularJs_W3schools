@@ -20,6 +20,8 @@ Formularios en AngularJS previenen la acción predeterminada, que es enviar el f
 
 Se hace referencia a los formularios utilizando el valor del atributo de nombre.
 
+Sintaxis:
+
 <form name="formname"></form>
 
 
@@ -49,6 +51,16 @@ Las clases son removidas si el valor de ellos representa falso
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 		<script src="" ></script>
 	</head>
+	<style type="text/css">
+		.myForm.ng-pristine
+		{
+			background-color:lightblue;
+		}
+		.myForm.ng-dirty
+		{
+			background-color:pink;
+		}
+	</style>
 	<body>
 	<div ng-app="">
 
@@ -57,7 +69,7 @@ Las clases son removidas si el valor de ellos representa falso
 				Intenta escribir en el campo de texto:
 			</p>
 			<p>
-				<input type="text" name="miInput" ng-model="miInput" required>
+				<input type="text" name="miInput"  required>
 			</p>
 			<p>
 				El estado del formulario es valido :
@@ -67,6 +79,18 @@ Las clases son removidas si el valor de ellos representa falso
 			</h1>
 			<p>
 				El campo de entrada es obligatorio, por lo que el estado válido del formulario no se convertirá en true siempre y cuando el valor esté vacío
+			</p>
+		</form>
+		<br><br><br><br>
+		<form name="myForm" class="myForm">
+			<p>
+				Intenta escribir en el campo :
+			</p>
+			<p>
+				<input type="text" name="miCampo" ng-model="miCampo" required>
+			</p>
+			<p>
+				El formulario obtiene una clase "ng-dirty" cuando el formulario se ha modificado y, por lo tanto, se convertirá en rosa.
 			</p>
 		</form>
 		

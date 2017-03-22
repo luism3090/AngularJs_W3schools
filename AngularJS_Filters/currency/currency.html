@@ -1,0 +1,38 @@
+<!-- 
+El filtro currency (moneda) formatea un número a un formato de moneda. De forma predeterminada, se utiliza el formato de moneda de configuración regional.
+
+
+Sintaxis
+
+{{ number | currency : symbol : fractionsize }}
+
+
+
+symbol :  Opcional. El símbolo de moneda que se mostrará. El símbolo puede ser cualquier carácter o texto.
+
+fractionsize:  Opcional. El número de decimales. -->
+
+
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>currency</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="currency.js" ></script>
+	</head>
+	<body ng-app="app" ng-controller="ctr1">
+		<p>
+			precio = {{precio | currency:"$"}}
+		</p>
+		 <p>
+			precio = {{precio | currency:"€":3}}
+		</p>
+		<p>
+			precio = {{precio | currency:"¥":4}}
+		</p> 
+		<p>
+			El filtro currency (moneda) formatea un número a formato de moneda 
+		</p>
+	</body>
+</html>

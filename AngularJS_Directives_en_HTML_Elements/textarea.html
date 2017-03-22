@@ -1,0 +1,80 @@
+<!-- AngularJS modifica el comportamiento predeterminado de los elementos textarea, pero solo si el atributo ng-model esta presente.
+
+Proporcionan vinculación de datos, lo que significa que forman parte del modelo AngularJS y pueden ser referidos y actualizados tanto en las funciones AngularJS como en el DOM.
+
+
+Proporcionan validación. Ejemplo: un elemento textarea con un atributo required , tiene el estado $valid establecido
+en false siempre y cuando esté vacío  
+
+También proporcionan un estado de control AngularJS mantiene el estado actual de todos los elementos de entrada.
+
+Los campos de entrada tienen los siguientes estados:
+
+$untouched: El campo no ha sido tocado aún
+$touched: El campo ya ha sido tocado 
+$pristine: El campo no ha sido modificado todavía
+$dirty : El campo ha sido modificado
+$invalid: El contenido del campo no es válido
+$valid : El contenido del campo Si es válido
+
+El valor de cada estado representa un valor booleano y es verdadero o falso.
+
+Sintaxis:
+
+<textarea ng-model="name"></textarea>
+
+Clases Css
+
+Los Elementos input dentro de una aplicación AngularJS se dan ciertas clases.
+ Estas clases se pueden utilizar para dar estilo a los elementos de entrada según su estado.
+
+Se agregan las clases siguientes:
+
+ng-untouched: El campo no ha sido tocado aún
+ng-touched: El campo ya ha sido tocado 
+ng-pristine: El campo no ha sido modificado todavía
+ng-dirty: El campo ha sido modificado
+ng-valid: El contenido del campo no es válido
+ng-invalid: El contenido del campo Si es válido
+ng-valid-key: Una clave para cada validación. Ejemplo: ng-valid-required, útil cuando hay más de una cosa que debe ser validada
+ng-invalid-key Ejemplo: ng-invalid-required
+
+
+Las clases se eliminan si el valor que representan es falso. -->
+
+
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		
+	</head>
+	<style type="text/css">
+		.miTextArea.ng-untouched
+		{
+			background-color: red;
+		}
+		.miTextArea.ng-dirty
+		{
+			background-color: green;
+		}
+	</style>
+	<body ng-app="">
+		<div>
+			<p>Todo lo que tu escribas en esta area de texto será tambien plasmada en el encabezado de abajo:</p>
+			<p><textarea cols="30" rows="5" ng-model="MiAreaDeTexto"></textarea></p>
+			<p>El contenido de el textarea es: </p>
+			<h1>{{MiAreaDeTexto}}</h1>
+		</div>
+		<br><br>
+		<hr>
+		<div>
+			<p>Intenta escribir en el campo de texto</p>
+			<p><textarea cols="30" rows="5" ng-model="miTextArea" class="miTextArea" required></textarea></p>
+		</div>
+		
+	</body>
+</html>

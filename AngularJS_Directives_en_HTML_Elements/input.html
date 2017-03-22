@@ -1,0 +1,91 @@
+<!-- AngularJS modifica el comportamiento predeterminado de los elementos input, pero solo si el atributo ng-model esta presente.
+
+Proporcionan vinculación de datos, lo que significa que forman parte del modelo AngularJS y pueden ser referidos y actualizados tanto en las funciones AngularJS como en el DOM.
+
+Proporcionan validación. Ejemplo: un elemento input con un atributo required , tiene el estado $valid establecido
+en false siempre y cuando esté vacío  
+
+También proporcionan un estado de control. AngularJS mantiene el estado actual de todos los elementos de entrada.
+
+Los campos de entrada tienen los siguientes estados:
+
+$untouched: El campo no ha sido tocado aún
+$touched: El campo ya ha sido tocado 
+$pristine: El campo no ha sido modificado todavía
+$dirty : El campo ha sido modificado
+$invalid: El contenido del campo no es válido
+$valid : El contenido del campo Si es válido
+
+El valor de cada estado representa un valor booleano y es verdadero o falso.
+
+Sintaxis:
+
+<input ng-model="name">
+
+
+Clases Css
+
+Los Elementos input dentro de una aplicación AngularJS se dan ciertas clases.
+ Estas clases se pueden utilizar para dar estilo a los elementos de entrada según su estado.
+
+Se agregan las clases siguientes:
+
+ng-untouched: El campo no ha sido tocado aún
+ng-touched: El campo ya ha sido tocado 
+ng-pristine: El campo no ha sido modificado todavía
+ng-dirty: El campo ha sido modificado
+ng-valid: El contenido del campo no es válido
+ng-invalid: El contenido del campo Si es válido
+ng-valid-key: Una clave para cada validación. Ejemplo: ng-valid-required, útil cuando hay más de una cosa que debe ser validada
+ng-invalid-key Ejemplo: ng-invalid-required
+
+
+Las clases se eliminan si el valor que representan es falso.
+
+ -->
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>input</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		
+	</head>
+	<style type="text/css">
+		.input.ng-invalid
+		{
+			background-color: red;
+		}
+		.input.ng-valid
+		{
+			background-color:green ;
+		}
+	</style>
+	<body ng-app="">
+	<section>
+			<p>
+				Todo lo que escriba en el campo de entrada también será el contenido del encabezado a continuación
+			</p>
+			<p>
+				<input type="text" name="miCampo" ng-model="miCampo" required>
+			</p>
+			<p>
+				El contenido del campo de entrada es
+			</p>
+			<h1>{{miCampo}}</h1>
+	</section>
+	<br><br><br>
+	<section>
+		<p>
+			Intenta escribir en el campo:
+		</p>
+		<p>
+			<input class="input" type="text" name="miCampo2" ng-model="miCampo2" required>
+		</p>
+		<p>
+			El campo de entrada requiere contenido y, por lo tanto, se convertirá en verde cuando se escribe en él
+		</p>
+	</section>
+	
+	</body>
+</html>
