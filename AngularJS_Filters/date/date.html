@@ -1,4 +1,4 @@
-El filtro de fecha da formato a una fecha a un formato especificado.
+<!-- El filtro de fecha da formato a una fecha a un formato especificado.
 
 La fecha puede ser un objeto de fecha, milisegundos o una cadena de fecha y hora como "2016-01-05T09: 05: 05.035Z"
 
@@ -13,10 +13,55 @@ parametros:
 
 format (opcional): 
 
+El formato de fecha para mostrar la fecha, que puede ser uno o más de los siguientes:
+
+"yyyy" year (2016)
+"yy" year (16)
+"y" year (2016)
+"MMMM" month (January)
+"MMM" month (Jan)
+"MM" month (01)
+"M" month (1)
+"dd" day (06) 
+"d" day (6)
+"EEEE" day (Tuesday)
+"EEE" day (Tue)
+"HH" hour, 00-23 (09)
+"H" hour 0-23 (9)
+"hh" hour in AM/PM, 00-12 (09)
+"h" hour in AM/PM, 0-12 (9)
+"mm" minute (05)
+"m" minute (5)
+"ss" second (05)
+"s" second (5)
+"sss" millisecond (035)
+"a" (AM/PM)
+"Z" timezone (from -1200 to +1200)
+"ww" week (00-53)
+"w" week (0-53)
+"G" era (AD)
+"GG" era (AD)
+"GGG" era (AD)
+"GGGG" era (Anno Domini)
 
 
+El valor de formato también puede ser uno de los siguientes formatos predefinidos:
 
 
+"short" igual que "M/d/yy h:mm a" (1/5/16 9:05 AM)
+"medium" igual que "MMM d, y h:mm:ss a" (Jan 5, 2016 9:05:05 AM)
+"shortDate" igual que "M/d/yy" (1/5/16)
+"mediumDate" igual que "MMM d, y" (Jan 5, 2016)
+"longDate" igual que "MMMM d, y" (January 5, 2016)
+"fullDate" igual que "EEEE, MMMM d, y" (Tuesday, January 5, 2016)
+"shortTime" igual que "h:mm a" (9:05 AM)
+"mediumTime" igual que "h:mm:ss a" (9:05:05 AM)
+
+
+timezone : Opcional. El huso horario utilizado para formatear la fecha.  
+
+
+-->
 
 
 <!DOCTYPE html>
@@ -27,7 +72,12 @@ format (opcional):
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 		<script src="date.js" ></script>
 	</head>
-	<body>
-		
+	<body ng-app="app" ng-controller="ctr1">
+	<div>
+		fecha = {{fecha | date }}
+	</div>
+		<div>
+			El filtro de fecha da formato a un objeto de fecha a un formato legible.
+		</div>
 	</body>
 </html>
